@@ -1,0 +1,43 @@
+.admission-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #aca9a9;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+button {
+  display: block;
+  width: calc(100% - 20px);
+  padding: 12px;
+  background-color: #242524;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
