@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form [formGroup]="admissionForm" (ngSubmit)="onSubmit()" class="admission-form">
+    Name:
+    <input type="text" formControlName="name" placeholder="Name" required>
+    <div *ngIf="admissionForm.get('name')?.hasError('required') && admissionForm.get('name')?.touched" class="error-message">
+      Name is required.
+    </div>
+    Email:
+    <input type="email" formControlName="email" placeholder="Email">
+    <div *ngIf="admissionForm.get('email')?.hasError('required') && admissionForm.get('email')?.touched" class="error-message">
+      Email is required.
+    </div>
+    <div *ngIf="admissionForm.get('email')?.hasError('email') && admissionForm.get('email')?.touched" class="error-message">
+      Invalid email format.
+    </div>
+    Gender:
+    <label><input type="radio" formControlName="gender" value="male"> Male</label>
+    <label><input type="radio" formControlName="gender" value="female"> Female</label>
+    <div *ngIf="admissionForm.get('gender')?.hasError('required') && admissionForm.get('gender')?.touched" class="error-message">
+         Gender is required.
+    </div>
+    School:
+    <input type="text" formControlName="school" placeholder="School">
+    <div *ngIf="admissionForm.get('school')?.hasError('required') && admissionForm.get('school')?.touched" class="error-message">
+      School is required.
+    </div>
+    SSLC Mark:
+    <input type="number" formControlName="sslcMark" placeholder="SSLC Mark">
+    <div *ngIf="admissionForm.get('sslcMark')?.hasError('required') && admissionForm.get('sslcMark')?.touched" class="error-message">
+      SSLC Mark is required.
+    </div>
+    HSC Mark:
+    <input type="number" formControlName="hscMark" placeholder="HSC Mark">
+    <div *ngIf="admissionForm.get('hscMark')?.hasError('required') && admissionForm.get('hscMark')?.touched" class="error-message">
+      HSC Mark is required.
+    </div>
+    Cutoff:
+    <input type="number" formControlName="cutoff" placeholder="Cutoff">
+    <div *ngIf="admissionForm.get('cutoff')?.hasError('required') && admissionForm.get('cutoff')?.touched" class="error-message">
+      Cutoff is required.
+    </div>
+    Preferred Department
+    <select formControlName="preferredDepartment">
+      <option value="" disabled selected>Select preferred department</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Electrical Engineering">Electrical Engineering</option>
+      <option value="Mechanical Engineering">Mechanical Engineering</option>
+      <option value="Civil Engineering">Civil Engineering</option>
+    </select>
+  
+    <button type="submit" (click)="onSubmit()">Submit</button>
+
+  </form>
+  
+</body>
+</html>
